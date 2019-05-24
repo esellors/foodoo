@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-class MealList extends Component {
+class Meal extends Component {
    render() {
 
       const {drinks, mains, sides, desserts} = this.props.meal;
@@ -12,7 +12,7 @@ class MealList extends Component {
             { drinks
                ? drinks.map((item, index) => {
                   return (
-                     <p className="drinks" key={index} data-key={index} onClick={evt => this.props.moveItem(evt)}>{item}</p>
+                     <p className="drinks" key={index} onClick={e => this.props.moveItem(e)}>{item}</p>
                   )})
                : null
             }
@@ -20,7 +20,7 @@ class MealList extends Component {
             { mains
                ? mains.map((item, index) => {
                   return (
-                     <p className="mains" key={index} data-key={index} onClick={evt => this.props.moveItem(evt)}>{item}</p>
+                     <p className="mains" key={index} onClick={e => this.props.moveItem(e)}>{item}</p>
                   )})
                : null
             }
@@ -28,7 +28,7 @@ class MealList extends Component {
             { sides
                ? sides.map((item, index) => {
                   return (
-                     <p className="sides" key={index} data-key={index} onClick={evt => this.props.moveItem(evt)}>{item}</p>
+                     <p className="sides" key={index} onClick={e => this.props.moveItem(e)}>{item}</p>
                   )})
                : null
             }
@@ -36,7 +36,7 @@ class MealList extends Component {
             { desserts
                ? desserts.map((item, index) => {
                   return (
-                     <p className="desserts" key={index} data-key={index} onClick={evt => this.props.moveItem(evt)}>{item}</p>
+                     <p className="desserts" key={index} onClick={e => this.props.moveItem(e)}>{item}</p>
                   )})
                : null
             }
@@ -46,4 +46,4 @@ class MealList extends Component {
    }
 }
 
-export default MealList;
+export default Meal;

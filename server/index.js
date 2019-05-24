@@ -8,7 +8,13 @@ app.use((req, res, next) => {
    next();
 });
 
-app.get("/api/menumeal", mmc.getItems); 
+app.use(express.json());
+
+app.get("/api/menumeal", mmc.getItems);
+app.put("/api/menumeal/:section/:category/:item", mmc.moveItems);
+app.delete("/api/menumeal/:category/:item", mmc.deleteItems);
+
+// app.post
 
 
 

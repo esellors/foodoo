@@ -1,6 +1,4 @@
 import React, {Component} from 'react';
-// import DisplayMenu from "./DisplayMenu";
-
 
 class Menu extends Component {
    render() {
@@ -15,7 +13,7 @@ class Menu extends Component {
                { drinks
                   ? drinks.map((item, index) => {
                      return (
-                        <p className="drinks" key={index} data-key={index} onClick={evt => this.props.moveItem(evt)}>{item}<span onClick={evt => this.props.deleteMenuItem(evt)}>x</span></p>
+                        <p className="drinks" key={index} onClick={e => this.props.moveItem(e)}>{item}<span onClick={e => this.props.deleteMenuItem(e)}>x</span></p>
                      )})
                   : null
                }
@@ -23,7 +21,7 @@ class Menu extends Component {
                { mains
                   ? mains.map((item, index) => {
                      return (
-                        <p className="mains" key={index} data-key={index} onClick={evt => this.props.moveItem(evt)}>{item}<span onClick={e => this.props.deleteMenuItem(e)}>x</span></p>
+                        <p className="mains" key={index} onClick={e => this.props.moveItem(e)}>{item}<span onClick={e => this.props.deleteMenuItem(e)}>x</span></p>
                      )})
                   : null
                }
@@ -31,7 +29,7 @@ class Menu extends Component {
                { sides
                   ? sides.map((item, index) => {
                      return (
-                        <p className="sides" key={index} data-key={index} onClick={evt => this.props.moveItem(evt)}>{item}<span onClick={e => this.props.deleteMenuItem(e)}>x</span></p>
+                        <p className="sides" key={index} onClick={e => this.props.moveItem(e)}>{item}<span onClick={e => this.props.deleteMenuItem(e)}>x</span></p>
                      )})
                   : null
                }
@@ -39,7 +37,7 @@ class Menu extends Component {
                { desserts
                   ? desserts.map((item, index) => {
                      return (
-                        <p className="desserts" key={index} data-key={index} onClick={evt => this.props.moveItem(evt)}>{item}<span onClick={e => this.props.deleteMenuItem(e)}>x</span></p>
+                        <p className="desserts" key={index} onClick={e => this.props.moveItem(e)}>{item}<span onClick={e => this.props.deleteMenuItem(e)}>x</span></p>
                      )})
                   : null
                }

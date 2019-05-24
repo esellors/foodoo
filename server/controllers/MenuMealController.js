@@ -1,7 +1,7 @@
 let menuMeal = {
    menu: {
-      drinks: ["whiskey", "coke"],
-      mains: ["steak"],
+      drinks: ["whiskey", "beer", "coke", "ginger ale", "water"],
+      mains: ["steak", "chili", "fish", "tacos"],
       sides: ["green beans", "corn", "corn bread"],
       desserts: ["pie", "ice cream", "whiskey pops"]
    },
@@ -13,7 +13,20 @@ let menuMeal = {
    }
 };
 
+
 let getItems = (req, res) => {
+   res.json(menuMeal);
+};
+
+let moveItems = (req, res) => {
+   console.log("CLICKED");
+}
+
+let deleteItems = (req, res) => {
+   const {category, item} = req.params;
+   let index = menuMeal.menu[category].findIndex(arrayItem => arrayItem === item);
+
+   menuMeal.menu[category].splice([index], 1);
    res.json(menuMeal);
 };
 
@@ -23,7 +36,8 @@ let getItems = (req, res) => {
 
 
 
-
 module.exports = {
-   getItems
+   getItems,
+   moveItems,
+   deleteItems
 };
