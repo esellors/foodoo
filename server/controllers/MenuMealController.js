@@ -13,19 +13,21 @@ let menuMeal = {
    }
 };
 
-
 let getItems = (req, res) => {
    res.json(menuMeal);
 };
 
 let moveItems = (req, res) => {
-   console.log("CLICKED");
+   const {section, category, item, destinationSection} = req.params;
+   let index = menuMeal[section][category].findIndex(arrayItem => arrayItem === item);
+   let tgtItem = menuMeal[section][category].splice(index, 1)
+   menuMeal[destinationSection][category].push(tgtItem);
+   res.json(menuMeal);
 }
 
 let deleteItems = (req, res) => {
    const {category, item} = req.params;
    let index = menuMeal.menu[category].findIndex(arrayItem => arrayItem === item);
-
    menuMeal.menu[category].splice([index], 1);
    res.json(menuMeal);
 };

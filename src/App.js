@@ -30,8 +30,9 @@ class App extends Component {
     const section = e.target.parentNode.id;
     const category = e.target.className;
     const item = e.target.firstChild.data;
+    const destinationSection = section === "menu" ? "meal" : "menu";
     axios
-      .put(`/api/menumeal/${section}/${category}/${item}`)
+      .put(`/api/menumeal/${section}/${category}/${item}/${destinationSection}`)
       .then(res => {
         this.setState({
           menu: res.data.menu,
