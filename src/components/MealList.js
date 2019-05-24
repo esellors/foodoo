@@ -2,18 +2,17 @@ import React, {Component} from 'react';
 
 class MealList extends Component {
    render() {
-      // console.log('MealList props:')
-      // console.log(this.props)
+
       const {drinks, mains, sides, desserts} = this.props.meal;
 
       return (
-         <section id="mealList">
+         <section id="meal">
 
          <h1>MEAL</h1>
             { drinks
                ? drinks.map((item, index) => {
                   return (
-                     <p key={index}>{item}</p>
+                     <p className="drinks" key={index} data-key={index} onClick={evt => this.props.moveItem(evt)}>{item}</p>
                   )})
                : null
             }
@@ -21,7 +20,7 @@ class MealList extends Component {
             { mains
                ? mains.map((item, index) => {
                   return (
-                     <p key={index}>{item}</p>
+                     <p className="mains" key={index} data-key={index} onClick={evt => this.props.moveItem(evt)}>{item}</p>
                   )})
                : null
             }
@@ -29,7 +28,7 @@ class MealList extends Component {
             { sides
                ? sides.map((item, index) => {
                   return (
-                     <p key={index}>{item}</p>
+                     <p className="sides" key={index} data-key={index} onClick={evt => this.props.moveItem(evt)}>{item}</p>
                   )})
                : null
             }
@@ -37,7 +36,7 @@ class MealList extends Component {
             { desserts
                ? desserts.map((item, index) => {
                   return (
-                     <p key={index}>{item}</p>
+                     <p className="desserts" key={index} data-key={index} onClick={evt => this.props.moveItem(evt)}>{item}</p>
                   )})
                : null
             }

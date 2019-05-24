@@ -15,7 +15,7 @@ main {
   display: flex;
 }
 
-#menu, #mealList {
+#menu, #meal {
   width: 400px;
   padding: 
 }
@@ -35,6 +35,6 @@ main {
   right: 0;
 }
 
-#mealList {
+#meal {
   background: orange;
 }

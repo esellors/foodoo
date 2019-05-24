@@ -26,7 +26,6 @@ class App extends Component {
       })
       .catch(error => console.log(`Load initial menumeal object: ${error}`))
   }
-
   deleteMenuItem(evt) {
     evt.stopPropagation();
     let menuCopy = {...this.state.menu};
@@ -34,20 +33,25 @@ class App extends Component {
     const menuCategory = evt.target.parentNode.className;
     const index = parseInt(evt.target.parentNode.getAttribute('data-key'));
     
-    menuCopy[menuCategory].splice([index], 1);
+    menuCopy[menuCategory].splice(index, 1);
     this.setState({[sectionName]: menuCopy})
   }
-
   moveItem(evt) {
- 
-  
-    console.log('clicked item p')
+    let menuCopy = {...this.state.menu};
+    let mealCopy = {...this.state.meal};
+    const sectionName = evt.target.parentNode.id;
+    const category = evt.target.className;
+    const index = parseInt(evt.target.getAttribute('data-key'));
 
-
-
+    if (sectionName === 'menu') { 
+        const itemToMove = menuCopy[category].splice(index, 1).toString();
+        mealCopy[category].push(itemToMove);
+    } else {
+        const itemToMove = mealCopy[category].splice(index, 1).toString();
+        menuCopy[category].push(itemToMove);
+    }
+    this.setState({menu: menuCopy, meal: mealCopy})
   }
-
-
   render() {
     // console.log(this.state.menu.length);
     // console.log(this.state.meal);
@@ -56,7 +60,7 @@ class App extends Component {
         <Header />
         <main>
           <Menu menu={this.state.menu} deleteMenuItem={this.deleteMenuItem} moveItem={this.moveItem} />
-          <MealList meal={this.state.meal} />
+          <MealList meal={this.state.meal} moveItem={this.moveItem} />
         </main>
       </div>
     );
