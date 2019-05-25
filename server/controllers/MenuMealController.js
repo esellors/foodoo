@@ -20,12 +20,16 @@ let getItems = (req, res) => {
 let moveItems = (req, res) => {
    const {section, category, item, destinationSection} = req.params;
    let index = menuMeal[section][category].findIndex(arrayItem => arrayItem === item);
-   let tgtItem = menuMeal[section][category].splice(index, 1)
+   let tgtItem = menuMeal[section][category].splice(index, 1).toString();
+   
+   console.log(tgtItem)
+
    menuMeal[destinationSection][category].push(tgtItem);
    res.json(menuMeal);
+
 }
 
-let deleteItems = (req, res) => {
+let deleteItem = (req, res) => {
    const {category, item} = req.params;
    let index = menuMeal.menu[category].findIndex(arrayItem => arrayItem === item);
    menuMeal.menu[category].splice([index], 1);
@@ -41,5 +45,5 @@ let deleteItems = (req, res) => {
 module.exports = {
    getItems,
    moveItems,
-   deleteItems
+   deleteItem
 };
