@@ -35,6 +35,21 @@ main {
   right: 0;
 }
 
+
+
+.add_item {
+  width: 100%;
+  font-size: 15px;
+  color: white;
+  background: turquoise;
+  border: none;
+}
+
+.hide_input {
+  display: none;
+}
+
+
 #meal {
   background: orange;
 }

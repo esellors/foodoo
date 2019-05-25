@@ -24,7 +24,7 @@ let moveItems = (req, res) => {
    
    console.log(tgtItem)
 
-   menuMeal[destinationSection][category].push(tgtItem);
+   menuMeal[destinationSection][category].unshift(tgtItem);
    res.json(menuMeal);
 
 }
