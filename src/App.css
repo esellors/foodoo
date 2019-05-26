@@ -29,12 +29,16 @@ main {
   text-transform: uppercase;
 }
 
-#menu h4 span {
-  padding: 0px 10px;
-  position: absolute;
-  right: 0;
-
+.menu_categories, #menu p {
+  display: flex;
+  justify-content: space-between;
 }
+
+.menu_categories span, #menu p span { 
+  margin: 0 10px;
+}
+
+
 
 form {
   display: flex;

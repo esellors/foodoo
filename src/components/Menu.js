@@ -29,7 +29,7 @@ function Menu(props) {
       <section id="menu">
 
          <h1>MENU</h1>
-         <h4>drinks<span onClick={e => toggleShowForm(e)}>+</span></h4>
+         <h4 className="menu_categories">drinks<span onClick={e => toggleShowForm(e)}>+</span></h4>
          <AddItem id="drinks" addItemRelay={addItemRelay} />
             { drinks
                ? drinks.map((item, index) => {
@@ -38,7 +38,7 @@ function Menu(props) {
                   )})
                : null
             }
-         <h4>mains<span onClick={e => toggleShowForm(e)}>+</span></h4>
+         <h4 className="menu_categories">mains<span onClick={e => toggleShowForm(e)}>+</span></h4>
          <AddItem id="mains" addItemRelay={addItemRelay} />
             { mains
                ? mains.map((item, index) => {
@@ -47,7 +47,7 @@ function Menu(props) {
                   )})
                : null
             }
-         <h4>sides<span onClick={e => toggleShowForm(e)}>+</span></h4>
+         <h4 className="menu_categories">sides<span onClick={e => toggleShowForm(e)}>+</span></h4>
          <AddItem id="sides" addItemRelay={addItemRelay} />
             { sides
                ? sides.map((item, index) => {
@@ -56,7 +56,7 @@ function Menu(props) {
                   )})
                : null
             }
-         <h4>desserts<span onClick={e => toggleShowForm(e)}>+</span></h4>
+         <h4 className="menu_categories">desserts<span onClick={e => toggleShowForm(e)}>+</span></h4>
          <AddItem id="desserts" addItemRelay={addItemRelay} />
             { desserts
                ? desserts.map((item, index) => {

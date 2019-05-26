@@ -19,7 +19,7 @@ function AddItem(props) {
    }
    return (
       <form className="add_item_form hide_input" id={props.id} onBlur={e => cancelAddItem(e)}>
-         <input className="add_item" placeholder="Enter item..."/>
+         <input className="add_item" placeholder="enter item or tab to cancel..."/>
          <input type="submit" className="add_btn" onClick={e => addItemHandler(e)} hidden />
          <span id="cancel_add_item">X</span>
       </form>
