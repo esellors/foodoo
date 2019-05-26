@@ -2,15 +2,19 @@ import React from 'react';
 import AddItem from './AddItem';
 
 function Menu(props) {
-   function toggleShowItem(e) {
+   function toggleShowForm(e) {
       const category = e.target.parentNode.firstChild.nodeValue;
-      let form = document.getElementById(category);
+      const clickedForm = document.getElementById(category);
+      const targetInputForm = clickedForm.firstChild;
+      const menuInputForms = document.getElementsByClassName('add_item_form');
 
-      if (form.classList.contains("hide_input")) {
-         form.classList.remove("hide_input");
-      } else {
-         form.classList.add("hide_input");
-      }
+      Array.from(menuInputForms).forEach(el => {
+         el.firstChild.value = '';
+         el.classList.add("hide_input")
+      })
+
+      clickedForm.classList.remove("hide_input");
+      targetInputForm.focus();
    }
    function addItemRelay(tgtCategory, newItem) {
       const newItemPackage = 
@@ -25,7 +29,7 @@ function Menu(props) {
       <section id="menu">
 
          <h1>MENU</h1>
-         <h4>drinks<span onClick={e => toggleShowItem(e)}>+</span></h4>
+         <h4>drinks<span onClick={e => toggleShowForm(e)}>+</span></h4>
          <AddItem id="drinks" addItemRelay={addItemRelay} />
             { drinks
                ? drinks.map((item, index) => {
@@ -34,7 +38,7 @@ function Menu(props) {
                   )})
                : null
             }
-         <h4>mains<span onClick={e => toggleShowItem(e)}>+</span></h4>
+         <h4>mains<span onClick={e => toggleShowForm(e)}>+</span></h4>
          <AddItem id="mains" addItemRelay={addItemRelay} />
             { mains
                ? mains.map((item, index) => {
@@ -43,7 +47,7 @@ function Menu(props) {
                   )})
                : null
             }
-         <h4>sides<span onClick={e => toggleShowItem(e)}>+</span></h4>
+         <h4>sides<span onClick={e => toggleShowForm(e)}>+</span></h4>
          <AddItem id="sides" addItemRelay={addItemRelay} />
             { sides
                ? sides.map((item, index) => {
@@ -52,7 +56,7 @@ function Menu(props) {
                   )})
                : null
             }
-         <h4>desserts<span onClick={e => toggleShowItem(e)}>+</span></h4>
+         <h4>desserts<span onClick={e => toggleShowForm(e)}>+</span></h4>
          <AddItem id="desserts" addItemRelay={addItemRelay} />
             { desserts
                ? desserts.map((item, index) => {

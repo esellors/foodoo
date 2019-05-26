@@ -29,7 +29,7 @@ main {
   text-transform: uppercase;
 }
 
-#menu span {
+#menu h4 span {
   padding: 0px 10px;
   position: absolute;
   right: 0;
@@ -38,10 +38,11 @@ main {
 
 form {
   display: flex;
+  justify-content: space-between;
 }
 
 .add_item {
-  width: 80%;
+  width: 92%;
   font-size: 15px;
   color: white;
   background: turquoise;
@@ -49,13 +50,17 @@ form {
   text-transform: lowercase;
 }
 
-.add_btn {
-  width: 20%;
+.hide_input {
+  display: none;
 }
 
-.hide_input {
-
-  display: none;
+#cancel_add_item {
+  width: 8%;
+  padding-bottom: 3px;
+  background: red;
+  color: white;
+  display: flex; 
+  justify-content: center;
 }
 
 #meal {

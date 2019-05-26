@@ -1,15 +1,15 @@
 let menuMeal = {
    menu: {
-      drinks: ["whiskey", "beer", "coke", "ginger ale", "water"],
-      mains: ["steak", "chili", "fish", "tacos"],
-      sides: ["green beans", "corn", "corn bread"],
-      desserts: ["pie", "ice cream", "whiskey pops"]
+      drinks: [],
+      mains: [],
+      sides: [],
+      desserts: []
    },
    meal: {
-      drinks: ["lemonade"],
-      mains: ["chicken"],
-      sides: ["asparagus", "salad"],
-      desserts: ["cake"]
+      drinks: [],
+      mains: [],
+      sides: [],
+      desserts: []
    }
 };
 
