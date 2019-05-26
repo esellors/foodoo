@@ -11,7 +11,7 @@ app.use((req, res, next) => {
 app.use(express.json());
 
 app.get("/api/menumeal", mmc.getItems);
-// app.post("/api/menumeal", mmc.addIt)
+app.post("/api/menumeal", mmc.addItem);
 app.put("/api/menumeal/:section/:category/:item/:destinationSection", mmc.moveItems);
 app.delete("/api/menumeal/:category/:item", mmc.deleteItem);
 

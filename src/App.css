@@ -17,7 +17,7 @@ main {
 
 #menu, #meal {
   width: 400px;
-  padding: 
+  user-select: none;
 }
 
 #menu {
@@ -33,19 +33,28 @@ main {
   padding: 0px 10px;
   position: absolute;
   right: 0;
+
 }
 
-
+form {
+  display: flex;
+}
 
 .add_item {
-  width: 100%;
+  width: 80%;
   font-size: 15px;
   color: white;
   background: turquoise;
   border: none;
+  text-transform: lowercase;
+}
+
+.add_btn {
+  width: 20%;
 }
 
 .hide_input {
+
   display: none;
 }
 

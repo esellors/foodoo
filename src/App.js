@@ -12,12 +12,24 @@ class App extends Component {
       menu: {},
       meal: {}
     }
-    this.deleteMenuItem = this.deleteMenuItem.bind(this);
+    this.addItem = this.addItem.bind(this);
     this.moveItem = this.moveItem.bind(this);
+    this.deleteMenuItem = this.deleteMenuItem.bind(this);
   }
   componentDidMount() {
     axios
       .get("/api/menumeal")
+      .then(res => {
+        this.setState({
+          menu: res.data.menu,
+          meal: res.data.meal
+        });
+      })
+      .catch(error => console.log(error))
+  }
+  addItem(newItemPackage) {
+    axios
+      .post("/api/menumeal/", newItemPackage)
       .then(res => {
         this.setState({
           menu: res.data.menu,
@@ -60,8 +72,11 @@ class App extends Component {
       <div className="wrapper">
         <Header />
         <main>
-          <Menu menu={this.state.menu} deleteMenuItem={this.deleteMenuItem} moveItem={this.moveItem} />
+
+          <Menu menu={this.state.menu} addItem={this.addItem} moveItem={this.moveItem} deleteMenuItem={this.deleteMenuItem} />
+          
           <Meal meal={this.state.meal} moveItem={this.moveItem} />
+
         </main>
       </div>
     );
