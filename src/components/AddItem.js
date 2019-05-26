@@ -15,7 +15,11 @@ function AddItem(props) {
       }
    }
    function cancelAddItem(e) {
-         e.target.parentNode.classList.add("hide_input");
+      e = e || window.event;
+      var target = e.target || e.srcElement;
+      setTimeout(() => {
+         target.parentNode.classList.add("hide_input");
+      }, 350);
    }
    return (
       <form className="add_item_form hide_input" id={props.id} onBlur={e => cancelAddItem(e)}>
