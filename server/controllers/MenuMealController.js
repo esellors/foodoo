@@ -19,7 +19,6 @@ const getItems = (req, res) => {
 
 const addItem = (req, res) => {
    const {category, item} = req.body;
-   console.log(category)
    menuMeal.menu[category].unshift(item);
    res.json(menuMeal);
 }

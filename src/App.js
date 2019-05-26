@@ -74,9 +74,9 @@ class App extends Component {
         <main>
 
           <Menu menu={this.state.menu} addItem={this.addItem} moveItem={this.moveItem} deleteMenuItem={this.deleteMenuItem} />
-          
+    
           <Meal meal={this.state.meal} moveItem={this.moveItem} />
-
+          
         </main>
       </div>
     );
