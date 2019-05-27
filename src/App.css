@@ -1,3 +1,20 @@
+@import url('https://fonts.googleapis.com/css?family=Acme|Indie+Flower&display=swap');
+/* font-family: 'Indie Flower', cursive;
+font-family: 'Acme', sans-serif; */
+
+body, input, select {
+  font-family: 'Acme', 'sans-serif', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+input[type="button"], #view_hide_meals, .menu_categories span, #menu_meal_selection p {
+  cursor: pointer;
+}
+
+input[type="button"] {
+  border: none;
+  background: none;
+}
+
 .wrapper {
   display: flex;
   align-items: center;
@@ -5,7 +22,7 @@
 }
 
 header {
-  width: 800px;
+  width: 600px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -17,26 +34,66 @@ header {
   justify-content: space-around;
 }
 
+#meals_lists h4 {
+  text-align: center;
+}
+
+#meals_lists ul {
+  padding: 0;
+}
+
+#meals_lists li {
+  list-style: none;
+}
+
+#meals_lists input {
+  color: red;
+}
+
+#meals_lists li, main p, input.add_item {
+  font-family: 'Indie Flower', cursive, 'Courier New', Courier, monospace;
+}
+
+#meals_lists li:hover, main p:hover, .meals_delete_btns:hover  {
+  font-weight: bold;
+}
+
+.meals_delete_btns {
+  width: 100%;
+  text-align: center;
+}
+
+#view_hide_meals {
+  user-select: none;
+}
+
 main {
-  width: 800px;
+  width: 600px;
 }
 
 #menu_meal_selection {
   display: flex;
 }
 
+#menu_meal_selection h4 {
+  margin: 5px 0;
+}
+
+#menu_meal_selection p {
+  margin: 5px 0;
+}
+
 #menu, #meal {
-  width: 400px;
+  width: 300px;
   user-select: none;
 }
 
 #menu {
-  background: yellow;
+  background: #fff;
   position: relative;
-}
-
-#menu h4{
-  text-transform: uppercase;
+  border-right: 1px solid #000;
+  padding: 10px;
+  box-sizing: border-box;
 }
 
 .menu_categories, #menu p {
@@ -48,17 +105,21 @@ main {
   margin: 0 10px;
 }
 
-.add_to_meal_form {
+#menu p span {
+  color: red;
+}
+
+.add_to_menu_form {
   display: flex;
   justify-content: space-between;
+  position: relative;
 }
 
 .add_item {
-  width: 92%;
+  width: 100%;
   font-size: 15px;
-  color: white;
-  background: turquoise;
-  border: none;
+  color: blue;
+  border: 1px dotted blue;
   text-transform: lowercase;
 }
 
@@ -68,15 +129,20 @@ main {
 
 #cancel_add_item {
   width: 8%;
-  padding-bottom: 3px;
-  background: red;
-  color: white;
+  color: red;
   display: flex; 
   justify-content: center;
+  position: absolute;
+  top: 3px;
+  right: 0px;
+  cursor: pointer;
 }
 
 #meal {
-  background: orange;
+  padding: 10px;
+  background: #fff;
+  border-left: 1px solid #000;
+  box-sizing: border-box;
 }
 
 #meal_header {
@@ -85,4 +151,20 @@ main {
   align-items: center;
 }
 
+#meal_header form {
+  border: 1px solid blue;
+}
 
+#meal_header input {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+select {
+  width: 100px;
+  border: none;
+}
+
+#footer {
+  margin-top: 10px;
+}

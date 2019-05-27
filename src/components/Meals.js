@@ -15,7 +15,7 @@ function Meals(props) {
       const tgtTag = e.target.parentNode.firstChild;
       const tgtMeal = tgtTag.innerText;
       
-      tgtTag.style.color = 'red';
+      tgtTag.style.color = '#000';
 
       axios
          .delete(`/api/meals/${tgtMeal}`)
@@ -34,7 +34,7 @@ function Meals(props) {
             <ul>
                <RenderMeals mealName={breakfast} />
             </ul>
-            <input className="meals_delete_btns" type="button" value="delete" onClick={e => deleteMealOfDay(e)} />
+            <input className="meals_delete_btns" type="button" value="x" onClick={e => deleteMealOfDay(e)} />
          </div>
          
          <div id="lunch_list" className="meals_lists">
@@ -42,7 +42,7 @@ function Meals(props) {
             <ul>
             <RenderMeals mealName={lunch} />
             </ul>
-            <input className="meals_delete_btns" type="button" value="delete" onClick={e => deleteMealOfDay(e)} />
+            <input className="meals_delete_btns" type="button" value="x" onClick={e => deleteMealOfDay(e)} />
          </div>
          
          <div id="dinner_list" className="meals_lists">
@@ -50,11 +50,11 @@ function Meals(props) {
             <ul>
                <RenderMeals mealName={dinner} />
             </ul>
-            <input className="meals_delete_btns" type="button" value="delete" onClick={e => deleteMealOfDay(e)} />
+            <input className="meals_delete_btns" type="button" value="x" onClick={e => deleteMealOfDay(e)} />
          </div>
 
          <div id="everything_list">
-            <h4 onClick={() => toggleShowMealsDetails()}>view/hide meals</h4>
+            <h4 id="view_hide_meals" onClick={() => toggleShowMealsDetails()}>▲toggle▼</h4>
          </div>
          
       </section>

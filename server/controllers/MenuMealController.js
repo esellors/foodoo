@@ -1,6 +1,6 @@
 let menuMeal = {
-   menu: {drinks: ['soda', 'iced tea'], mains: ['chicken', 'steak', 'pasta'], sides: ['green beans', 'corn', 'asparagus'], desserts: ['cake', 'ice cream']},
-   meal: {drinks: ['orange juice','milk'], mains: ['eggs'], sides: ['bacon','toast'], desserts: ['apple pie']},
+   menu: {drinks: ['orange juice', 'coke', 'beer'], mains: ['eggs', 'chicken sandwich', 'steak'], sides: ['hash browns', 'bacon', 'chips', 'green beans', 'corn'], desserts: ['ice cream', 'cake']},
+   meal: {drinks: [], mains: [], sides: [], desserts: []},
    meals: {breakfast: [], lunch: [], dinner: []}
 };
 

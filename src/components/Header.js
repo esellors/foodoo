@@ -5,7 +5,7 @@ class Header extends Component {
       return (
          <header>
             <h2>foodoo</h2>
-            <h4>a meal planner for the bored</h4>
+            <h4>your daily meal planner</h4>
          </header>
       )
    }

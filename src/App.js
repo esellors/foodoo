@@ -5,6 +5,7 @@ import Header from './components/Header';
 import Menu from './components/Menu';
 import Meal from './components/Meal';
 import Meals from './components/Meals';
+import Footer from './components/Footer';
 
 class App extends Component {
   constructor(props) {
@@ -98,8 +99,8 @@ class App extends Component {
             <Meal meal={this.state.meal} moveItem={this.moveItem} updateMealsHandler={this.updateMealsHandler} />
 
           </div>
-
         </main>
+        <Footer />
       </div>
     );
   }

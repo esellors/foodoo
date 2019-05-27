@@ -13,8 +13,9 @@ function MealsSelect(props) {
          if (mealHeaderNextSibling === null) {
             alert('Please add items to your meal')
          } else {
-            let mealsListsCSS = document.getElementById(`${tgtMeal}_list`).style;
-            mealsListsCSS.color = "green";
+            let mealsListsMealTitle = document.getElementById(`${tgtMeal}_list`).firstChild;
+
+            mealsListsMealTitle.style.color = "#61cc76";
             axios
             .put(`/api/meals/${tgtMeal}`)
             .then(res => {
@@ -32,7 +33,7 @@ function MealsSelect(props) {
             <option value="lunch">lunch</option>
             <option value="dinner">dinner</option>
          </select>
-         <input type="submit" value="add" onClick={e => sendToUpdateMealsHandler(e)} />
+         <input type="button" value="+" onClick={e => sendToUpdateMealsHandler(e)} />
       </form>
    );
 }
