@@ -1,5 +1,6 @@
 import React from 'react';
 import AddItem from './AddItem';
+import RenderMenuItems from './RenderMenuItems';
 
 function Menu(props) {
    function toggleShowForm(e) {
@@ -31,40 +32,24 @@ function Menu(props) {
          <h1>MENU</h1>
          <h4 className="menu_categories">drinks<span onClick={e => toggleShowForm(e)}>+</span></h4>
          <AddItem id="drinks" addItemRelay={addItemRelay} />
-            { drinks
-               ? drinks.map((item, index) => {
-                  return (
-                     <p className="drinks" key={index} onClick={e => props.moveItem(e)}>{item}<span onClick={e => props.deleteMenuItem(e)}>x</span></p>
-                  )})
-               : null
-            }
+            
+         <RenderMenuItems categoryName="drinks" moveItem={props.moveItem} deleteMenuItem={props.deleteMenuItem} categoryData={drinks} />
+            
          <h4 className="menu_categories">mains<span onClick={e => toggleShowForm(e)}>+</span></h4>
          <AddItem id="mains" addItemRelay={addItemRelay} />
-            { mains
-               ? mains.map((item, index) => {
-                  return (
-                     <p className="mains" key={index} onClick={e => props.moveItem(e)}>{item}<span onClick={e => props.deleteMenuItem(e)}>x</span></p>
-                  )})
-               : null
-            }
+
+         <RenderMenuItems categoryName="mains" moveItem={props.moveItem} deleteMenuItem={props.deleteMenuItem} categoryData={mains} />
+
          <h4 className="menu_categories">sides<span onClick={e => toggleShowForm(e)}>+</span></h4>
          <AddItem id="sides" addItemRelay={addItemRelay} />
-            { sides
-               ? sides.map((item, index) => {
-                  return (
-                     <p className="sides" key={index} onClick={e => props.moveItem(e)}>{item}<span onClick={e => props.deleteMenuItem(e)}>x</span></p>
-                  )})
-               : null
-            }
+
+         <RenderMenuItems categoryName="sides" moveItem={props.moveItem} deleteMenuItem={props.deleteMenuItem} categoryData={sides} />
+
          <h4 className="menu_categories">desserts<span onClick={e => toggleShowForm(e)}>+</span></h4>
          <AddItem id="desserts" addItemRelay={addItemRelay} />
-            { desserts
-               ? desserts.map((item, index) => {
-                  return (
-                     <p className="desserts" key={index} onClick={e => props.moveItem(e)}>{item}<span onClick={e => props.deleteMenuItem(e)}>x</span></p>
-                  )})
-               : null
-            }
+
+         <RenderMenuItems categoryName="desserts" moveItem={props.moveItem} deleteMenuItem={props.deleteMenuItem} categoryData={desserts} />
+
       </section>
    )
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import RenderMeals from './RenderMeals';
 
 function Meals(props) {
    function toggleShowMealsDetails() {
@@ -31,12 +32,7 @@ function Meals(props) {
          <div id="breakfast_list" className="meals_lists">
             <h4>breakfast</h4>
             <ul>
-               {  breakfast
-                  ? breakfast.map((item, index) => {
-                     return <li key={`breakfast-${index}`}>{item}</li>
-                  })
-                  : null
-               }
+               <RenderMeals mealName={breakfast} />
             </ul>
             <input className="meals_delete_btns" type="button" value="delete" onClick={e => deleteMealOfDay(e)} />
          </div>
@@ -44,12 +40,7 @@ function Meals(props) {
          <div id="lunch_list" className="meals_lists">
             <h4>lunch</h4>
             <ul>
-               {  lunch 
-                  ? lunch.map((item, index) => {
-                     return <li key={`lunch-${index}`}>{item}</li>
-                  })
-                  : null
-               }
+            <RenderMeals mealName={lunch} />
             </ul>
             <input className="meals_delete_btns" type="button" value="delete" onClick={e => deleteMealOfDay(e)} />
          </div>
@@ -57,12 +48,7 @@ function Meals(props) {
          <div id="dinner_list" className="meals_lists">
             <h4>dinner</h4>
             <ul>
-               {  dinner 
-                  ? dinner.map((item, index) => {
-                     return <li key={`dinner-${index}`}>{item}</li>
-                  })
-                  : null
-               }
+               <RenderMeals mealName={dinner} />
             </ul>
             <input className="meals_delete_btns" type="button" value="delete" onClick={e => deleteMealOfDay(e)} />
          </div>
