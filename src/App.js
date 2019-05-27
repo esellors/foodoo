@@ -4,17 +4,21 @@ import axios from 'axios';
 import Header from './components/Header';
 import Menu from './components/Menu';
 import Meal from './components/Meal';
+import Meals from './components/Meals';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       menu: {},
-      meal: {}
+      meal: {},
+      meals: {}
     }
     this.addItem = this.addItem.bind(this);
     this.moveItem = this.moveItem.bind(this);
     this.deleteMenuItem = this.deleteMenuItem.bind(this);
+    this.updateMealsHandler = this.updateMealsHandler.bind(this);
+    this.deleteMealOfDayHandler = this.deleteMealOfDayHandler.bind(this);
   }
   componentDidMount() {
     axios
@@ -22,7 +26,7 @@ class App extends Component {
       .then(res => {
         this.setState({
           menu: res.data.menu,
-          meal: res.data.meal
+          meal: res.data.meal,
         });
       })
       .catch(error => console.log(error))
@@ -33,7 +37,7 @@ class App extends Component {
       .then(res => {
         this.setState({
           menu: res.data.menu,
-          meal: res.data.meal
+          meal: res.data.meal,
         });
       })
       .catch(error => console.log(error))
@@ -62,10 +66,22 @@ class App extends Component {
       .then(res => {
         this.setState({
           menu: res.data.menu,
-          meal: res.data.meal
         });
       })
       .catch(error => console.log(error))
+  }
+  updateMealsHandler(resFromMealsSelectJs) {
+    const meal = resFromMealsSelectJs.data.meal;
+    const meals = resFromMealsSelectJs.data.meals;
+    this.setState({
+      meal: meal,
+      meals: meals
+    })
+  }
+  deleteMealOfDayHandler(responseFromMealsJs) {
+    this.setState({
+      meals: responseFromMealsJs.data
+    })
   }
   render() {
     return (
@@ -73,9 +89,15 @@ class App extends Component {
         <Header />
         <main>
 
-          <Menu menu={this.state.menu} addItem={this.addItem} moveItem={this.moveItem} deleteMenuItem={this.deleteMenuItem} />
-    
-          <Meal meal={this.state.meal} moveItem={this.moveItem} />
+          <Meals meals={this.state.meals} deleteMealOfDayHandler={this.deleteMealOfDayHandler} />
+
+          <div id="menu_meal_selection">
+
+            <Menu menu={this.state.menu} addItem={this.addItem} moveItem={this.moveItem} deleteMenuItem={this.deleteMenuItem} />
+      
+            <Meal meal={this.state.meal} moveItem={this.moveItem} updateMealsHandler={this.updateMealsHandler} />
+
+          </div>
 
         </main>
       </div>

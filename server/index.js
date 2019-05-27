@@ -15,6 +15,9 @@ app.post("/api/menumeal", mmc.addItem);
 app.put("/api/menumeal/:section/:category/:item/:destinationSection", mmc.moveItems);
 app.delete("/api/menumeal/:category/:item", mmc.deleteItem);
 
+app.put("/api/meals/:mealOfDay", mmc.addMealToMeals)
+app.delete("/api/meals/:mealOfDay", mmc.deleteMealFromMeals)
+
 app.listen(SERVER_PORT, () => {
    console.log(`Chilling to Lo-fi ${8080} fm`);
 })

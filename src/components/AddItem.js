@@ -18,12 +18,13 @@ function AddItem(props) {
       e = e || window.event;
       var target = e.target || e.srcElement;
       setTimeout(() => {
-         target.parentNode.classList.add("hide_input");
+         target.value = '';
+         target.parentNode.classList.add("hide_add_item_input");
       }, 350);
    }
    return (
-      <form className="add_item_form hide_input" id={props.id} onBlur={e => cancelAddItem(e)}>
-         <input className="add_item" placeholder="enter item or tab to cancel..."/>
+      <form className="add_to_meal_form hide_add_item_input" id={props.id} onBlur={e => cancelAddItem(e)}>
+         <input className="add_item" placeholder="enter item..."/>
          <input type="submit" className="add_btn" onClick={e => addItemHandler(e)} hidden />
          <span id="cancel_add_item">X</span>
       </form>

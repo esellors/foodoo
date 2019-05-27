@@ -11,7 +11,17 @@ header {
   align-items: center;
 }
 
+#meals_lists {
+  height: 60px;
+  display: flex;
+  justify-content: space-around;
+}
+
 main {
+  width: 800px;
+}
+
+#menu_meal_selection {
   display: flex;
 }
 
@@ -38,9 +48,7 @@ main {
   margin: 0 10px;
 }
 
-
-
-form {
+.add_to_meal_form {
   display: flex;
   justify-content: space-between;
 }
@@ -54,7 +62,7 @@ form {
   text-transform: lowercase;
 }
 
-.hide_input {
+.hide_add_item_input {
   display: none;
 }
 
@@ -70,3 +78,11 @@ form {
 #meal {
   background: orange;
 }
+
+#meal_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
