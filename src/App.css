@@ -28,6 +28,16 @@ header {
   align-items: center;
 }
 
+header h2 {
+  color: yellow;
+}
+
+#site_title {
+  color: black;
+  position: relative;
+  left: -81px;
+}
+
 #meals_lists {
   height: 60px;
   display: flex;
@@ -61,11 +71,11 @@ header {
   color: rgb(73, 121, 255);
 }
 
-#meals_lists li, main p, input.add_item {
+#meals_lists li, main p, input.add_item, .add_to_menu_form span {
   font-family: 'Indie Flower', cursive, 'Courier New', Courier, monospace;
 }
 
-#meals_lists li:hover, main p:hover, .meals_delete_btns:hover  {
+main p:hover, .meals_delete_btns:hover  {
   font-weight: bold;
 }
 
@@ -140,13 +150,18 @@ main {
 
 #cancel_add_item {
   width: 8%;
+  font-size: 16px;
   color: red;
   display: flex; 
   justify-content: center;
   position: absolute;
-  top: 3px;
-  right: 0px;
+  top: 0px;
+  right: 2px;
   cursor: pointer;
+}
+
+#cancel_add_item:hover {
+  font-weight: bold;
 }
 
 #meal {
