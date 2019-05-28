@@ -36,18 +36,29 @@ header {
 
 #meals_lists h4 {
   text-align: center;
+  margin-bottom: 5px;
 }
 
 #meals_lists ul {
   padding: 0;
+  margin-bottom: 5px;
 }
 
 #meals_lists li {
   list-style: none;
+  text-align: center;
 }
 
 #meals_lists input {
   color: red;
+}
+
+.meals_lists {
+  width: 150px;
+}
+
+#everything_list {
+  color: rgb(73, 121, 255);
 }
 
 #meals_lists li, main p, input.add_item {
@@ -123,7 +134,7 @@ main {
   text-transform: lowercase;
 }
 
-.hide_add_item_input {
+.hide_element {
   display: none;
 }
 
@@ -160,11 +171,21 @@ main {
   font-weight: bold;
 }
 
+#meal p {
+  position: relative;
+}
+
+#meal p span {
+  position: absolute;
+  right: 0px;
+}
+
 select {
-  width: 100px;
+  width: 170px;
   border: none;
 }
 
 #footer {
-  margin-top: 10px;
+  margin: 10px 0 15px;
+  color: rgb(167, 167, 167);
 }

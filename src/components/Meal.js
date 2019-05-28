@@ -12,28 +12,28 @@ function Meal(props) {
          { drinks
             ? drinks.map((item, index) => {
                return (
-                  <p className="drinks" key={index} onClick={e => props.moveItem(e)}>{item}</p>
+                  <p className="drinks" key={index} onClick={e => props.moveItem(e)}>{item}<span>&#40;-&#41;</span></p>
                )})
             : null
          }
          { mains
             ? mains.map((item, index) => {
                return (
-                  <p className="mains" key={index} onClick={e => props.moveItem(e)}>{item}</p>
+                  <p className="mains" key={index} onClick={e => props.moveItem(e)}>{item}<span>&#40;-&#41;</span></p>
                )})
             : null
          }
          { sides
             ? sides.map((item, index) => {
                return (
-                  <p className="sides" key={index} onClick={e => props.moveItem(e)}>{item}</p>
+                  <p className="sides" key={index} onClick={e => props.moveItem(e)}>{item}<span>&#40;-&#41;</span></p>
                )})
             : null
          }
          { desserts
             ? desserts.map((item, index) => {
                return (
-                  <p className="desserts" key={index} onClick={e => props.moveItem(e)}>{item}</p>
+                  <p className="desserts" key={index} onClick={e => props.moveItem(e)}>{item}<span>&#40;-&#41;</span></p>
                )})
             : null
          }

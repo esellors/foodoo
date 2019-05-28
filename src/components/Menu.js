@@ -11,10 +11,10 @@ function Menu(props) {
 
       Array.from(menuInputForms).forEach(el => {
          el.firstChild.value = '';
-         el.classList.add("hide_add_item_input")
+         el.classList.add("hide_element")
       })
 
-      clickedForm.classList.remove("hide_add_item_input");
+      clickedForm.classList.remove("hide_element");
       targetInputForm.focus();
    }
    function addItemRelay(tgtCategory, newItem) {

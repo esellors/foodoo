@@ -14,7 +14,7 @@ function Meals(props) {
    function deleteMealOfDay(e) {
       const tgtTag = e.target.parentNode.firstChild;
       const tgtMeal = tgtTag.innerText;
-      
+
       tgtTag.style.color = '#000';
 
       axios
@@ -34,7 +34,7 @@ function Meals(props) {
             <ul>
                <RenderMeals mealName={breakfast} />
             </ul>
-            <input className="meals_delete_btns" type="button" value="x" onClick={e => deleteMealOfDay(e)} />
+            <input id="breakfast_delete_btn" className="meals_delete_btns" type="button" value="x" onClick={e => deleteMealOfDay(e)} />
          </div>
          
          <div id="lunch_list" className="meals_lists">
@@ -42,7 +42,7 @@ function Meals(props) {
             <ul>
             <RenderMeals mealName={lunch} />
             </ul>
-            <input className="meals_delete_btns" type="button" value="x" onClick={e => deleteMealOfDay(e)} />
+            <input id="lunch_delete_button" className="meals_delete_btns" type="button" value="x" onClick={e => deleteMealOfDay(e)} />
          </div>
          
          <div id="dinner_list" className="meals_lists">
@@ -50,7 +50,7 @@ function Meals(props) {
             <ul>
                <RenderMeals mealName={dinner} />
             </ul>
-            <input className="meals_delete_btns" type="button" value="x" onClick={e => deleteMealOfDay(e)} />
+            <input id="dinner_delete_button" className="meals_delete_btns" type="button" value="x" onClick={e => deleteMealOfDay(e)} />
          </div>
 
          <div id="everything_list">
