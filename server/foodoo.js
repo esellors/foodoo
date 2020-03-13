@@ -1,7 +1,9 @@
+require('dotenv').config();
 const express = require('express');
 const app = express();
 const mmc = require('./controllers/MenuMealController');
-const SERVER_PORT = 8080;
+
+const { SERVER_PORT } = process.env;
 
 app.use((req, res, next) => {
    console.log('...API request received');
