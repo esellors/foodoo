@@ -1,11 +1,11 @@
 let menuMeal = {
-   menu: {drinks: ['orange juice', 'coke', 'beer'], mains: ['eggs', 'chicken sandwich', 'steak'], sides: ['hash browns', 'bacon', 'chips', 'green beans', 'corn'], desserts: ['ice cream', 'cake']},
-   meal: {drinks: [], mains: [], sides: [], desserts: []},
-   meals: {breakfast: [], lunch: [], dinner: []}
+   menu: { drinks: ['orange juice'], mains: ['eggs'], sides: ['hash browns'], desserts: ['cake'] },
+   meal: { drinks: [], mains: [], sides: [], desserts: [] },
+   meals: { breakfast: [], lunch: [], dinner: [] }
 };
 
 const addMealToMeals = (req, res) => {
-   const {mealOfDay} = req.params;
+   const { mealOfDay } = req.params;
    let mealOfDayDrinks = menuMeal.meal.drinks.splice(0);
    let mealOfDayMains = menuMeal.meal.mains.splice(0);
    let mealOfDaySides = menuMeal.meal.sides.splice(0);
@@ -17,7 +17,7 @@ const addMealToMeals = (req, res) => {
 }
 
 const deleteMealFromMeals = (req, res) => {
-   const {mealOfDay} = req.params;
+   const { mealOfDay } = req.params;
 
    menuMeal.meals[mealOfDay] = [];
    res.json(menuMeal.meals);
@@ -28,13 +28,13 @@ const getItems = (req, res) => {
 };
 
 const addItem = (req, res) => {
-   const {category, item} = req.body;
+   const { category, item } = req.body;
    menuMeal.menu[category].unshift(item);
    res.json(menuMeal);
 }
 
 const moveItems = (req, res) => {
-   const {section, category, item, destinationSection} = req.params;
+   const { section, category, item, destinationSection } = req.params;
    let index = menuMeal[section][category].findIndex(arrayItem => arrayItem === item);
    let tgtItem = menuMeal[section][category].splice(index, 1).toString();
 
@@ -43,7 +43,7 @@ const moveItems = (req, res) => {
 }
 
 const deleteItem = (req, res) => {
-   const {category, item} = req.params;
+   const { category, item } = req.params;
    console.log(req.params);
    let index = menuMeal.menu[category].findIndex(arrayItem => arrayItem === item);
    menuMeal.menu[category].splice([index], 1);

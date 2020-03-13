@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import './App.css';
 import axios from 'axios';
 import Header from './components/Header';
@@ -95,7 +95,7 @@ class App extends Component {
           <div id="menu_meal_selection">
 
             <Menu menu={this.state.menu} addItem={this.addItem} moveItem={this.moveItem} deleteMenuItem={this.deleteMenuItem} />
-      
+
             <Meal meal={this.state.meal} moveItem={this.moveItem} updateMealsHandler={this.updateMealsHandler} />
 
           </div>

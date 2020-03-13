@@ -18,23 +18,23 @@ function Menu(props) {
       targetInputForm.focus();
    }
    function addItemRelay(tgtCategory, newItem) {
-      const newItemPackage = 
+      const newItemPackage =
       {
          category: tgtCategory,
          item: newItem
       };
       props.addItem(newItemPackage);
    }
-   const {drinks, mains, sides, desserts} = props.menu;
+   const { drinks, mains, sides, desserts } = props.menu;
    return (
       <section id="menu">
 
          <h1>MENU</h1>
          <h4 className="menu_categories">drinks<span onClick={e => toggleShowForm(e)}>+</span></h4>
          <AddItem id="drinks" addItemRelay={addItemRelay} />
-            
+
          <RenderMenuItems categoryName="drinks" moveItem={props.moveItem} deleteMenuItem={props.deleteMenuItem} categoryData={drinks} />
-            
+
          <h4 className="menu_categories">mains<span onClick={e => toggleShowForm(e)}>+</span></h4>
          <AddItem id="mains" addItemRelay={addItemRelay} />
 

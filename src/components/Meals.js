@@ -24,7 +24,7 @@ function Meals(props) {
          })
    }
 
-   const {breakfast, lunch, dinner} = props.meals;
+   const { breakfast, lunch, dinner } = props.meals;
 
    return (
       <section id="meals_lists">
@@ -36,15 +36,15 @@ function Meals(props) {
             </ul>
             <input id="breakfast_delete_btn" className="meals_delete_btns" type="button" value="x" onClick={e => deleteMealOfDay(e)} />
          </div>
-         
+
          <div id="lunch_list" className="meals_lists">
             <h4>lunch</h4>
             <ul>
-            <RenderMeals mealName={lunch} />
+               <RenderMeals mealName={lunch} />
             </ul>
             <input id="lunch_delete_button" className="meals_delete_btns" type="button" value="x" onClick={e => deleteMealOfDay(e)} />
          </div>
-         
+
          <div id="dinner_list" className="meals_lists">
             <h4>dinner</h4>
             <ul>
@@ -56,7 +56,7 @@ function Meals(props) {
          <div id="everything_list">
             <h4 id="view_hide_meals" onClick={() => toggleShowMealsDetails()}>▲toggle▼</h4>
          </div>
-         
+
       </section>
    );
 }

@@ -15,17 +15,17 @@ function MealsSelect(props) {
          mealsListsMealTitle.style.color = "#61cc76";
 
          axios
-         .put(`/api/meals/${tgtMeal}`)
-         .then(res => {
-            props.updateMealsHandler(res)
-         })
-         .catch(error => console.log(error))
+            .put(`/api/meals/${tgtMeal}`)
+            .then(res => {
+               props.updateMealsHandler(res)
+            })
+            .catch(error => console.log(error))
       }
    }
    return (
       <form id="add_to_meals_form">
          <select name="mealsList">
-            <option value ="" disabled selected>breakfast, lunch, or dinner?</option>
+            <option value="" disabled selected>add where?</option>
             <option value="breakfast">breakfast</option>
             <option value="lunch">lunch</option>
             <option value="dinner">dinner</option>

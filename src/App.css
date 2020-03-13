@@ -1,6 +1,4 @@
 @import url('https://fonts.googleapis.com/css?family=Acme|Indie+Flower&display=swap');
-/* font-family: 'Indie Flower', cursive;
-font-family: 'Acme', sans-serif; */
 
 body, input, select {
   font-family: 'Acme', 'sans-serif', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -16,15 +14,16 @@ input[type="button"] {
 }
 
 .wrapper {
+  margin: 0 auto;
   display: flex;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
 }
 
 header {
-  width: 600px;
+  width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 }
 
@@ -34,7 +33,7 @@ header h2 {
 
 #site_title {
   color: black;
-  position: relative;
+  position: relative; 
   left: -81px;
 }
 
@@ -89,7 +88,7 @@ main p:hover, .meals_delete_btns:hover  {
 }
 
 main {
-  width: 600px;
+  width: 100%;
 }
 
 #menu_meal_selection {
@@ -105,14 +104,13 @@ main {
 }
 
 #menu, #meal {
-  width: 300px;
+  width: 50%;
   user-select: none;
 }
 
 #menu {
   background: #fff;
   position: relative;
-  border-right: 1px solid #000;
   padding: 10px;
   box-sizing: border-box;
 }
@@ -167,7 +165,6 @@ main {
 #meal {
   padding: 10px;
   background: #fff;
-  border-left: 1px solid #000;
   box-sizing: border-box;
 }
 
@@ -196,11 +193,17 @@ main {
 }
 
 select {
-  width: 170px;
+  width: 100%;
   border: none;
 }
 
 #footer {
   margin: 10px 0 15px;
   color: rgb(167, 167, 167);
+}
+
+@media only screen and (min-width: 600px) {
+  .wrapper {
+    width: 600px;
+  }
 }

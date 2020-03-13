@@ -5,7 +5,7 @@ const mmc = require('./controllers/MenuMealController');
 
 const { SERVER_PORT } = process.env;
 
-app.use( express.static( `${__dirname}/../build` ) );
+app.use(express.static(`${__dirname}/../build`));
 
 app.use((req, res, next) => {
    console.log('...API request received');
