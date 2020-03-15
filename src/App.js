@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import axios from 'axios';
+import Referrer from './components/Referrer/Referrer';
 import Header from './components/Header';
 import Menu from './components/Menu';
 import Meal from './components/Meal';
@@ -86,22 +87,25 @@ class App extends Component {
   }
   render() {
     return (
-      <div className="wrapper">
-        <Header />
-        <main>
+      <>
+        { document.referrer === 'https://www.esellors.com' ? <Referrer /> : null }
+        <div className="wrapper">
+          <Header />
+          <main>
 
-          <Meals meals={this.state.meals} deleteMealOfDayHandler={this.deleteMealOfDayHandler} />
+            <Meals meals={this.state.meals} deleteMealOfDayHandler={this.deleteMealOfDayHandler} />
 
-          <div id="menu_meal_selection">
+            <div id="menu_meal_selection">
 
-            <Menu menu={this.state.menu} addItem={this.addItem} moveItem={this.moveItem} deleteMenuItem={this.deleteMenuItem} />
+              <Menu menu={this.state.menu} addItem={this.addItem} moveItem={this.moveItem} deleteMenuItem={this.deleteMenuItem} />
 
-            <Meal meal={this.state.meal} moveItem={this.moveItem} updateMealsHandler={this.updateMealsHandler} />
+              <Meal meal={this.state.meal} moveItem={this.moveItem} updateMealsHandler={this.updateMealsHandler} />
 
-          </div>
-        </main>
-        <Footer />
-      </div>
+            </div>
+          </main>
+          <Footer />
+        </div>
+      </>
     );
   }
 }
