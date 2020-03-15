@@ -88,7 +88,7 @@ class App extends Component {
   render() {
     return (
       <>
-        { document.referrer === 'https://www.esellors.com' ? <Referrer /> : null }
+        { document.referrer === 'https://www.esellors.com/' ? <Referrer /> : null }
         <div className="wrapper">
           <Header />
           <main>
